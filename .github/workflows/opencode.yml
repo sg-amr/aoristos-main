@@ -1,22 +1,26 @@
-name: OpenCode AI PR Generator
+name: AI PR Generator
 
 on:
-  issues:
-    types: [opened, edited]
   issue_comment:
     types: [created]
 
 jobs:
-  opencode_job:
-    if: contains(github.event.issue.labels.*.name, 'opencode') || contains(github.event.comment.body, '/oc')
+  ai_coding:
+    if: startsWith(github.event.comment.body, '/oc')
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run OpenCode
-        uses: opencode-project/opencode-action@main
+      - name: OpenCode AI Action
+        uses: all-in-a-is-all-you-need/aicursor@v1
         with:
-          model: "gemini-2.5-flash"
+          model: "gemini-2.5-flash" 
           api_key: ${{ secrets.GEMINI_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          instruction: ${{ github.event.comment.body }}
