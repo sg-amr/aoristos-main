@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-aoristos-green: #84CC16;
+  --color-aoristos-dark: #171717;
+  --color-aoristos-light: #FAFAFA;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-aoristos-light);
+    color: var(--color-aoristos-dark);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  }
+
+  /* Typography explicitly for philosophy/statements */
+  .font-serif-jp {
+    font-family: 'Noto Serif JP', serif;
+  }
+}
