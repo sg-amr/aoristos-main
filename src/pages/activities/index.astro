@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ACHIEVEMENTS } from '../../consts';
+
+// Group achievements by category for the directory view
+const categories = [...new Set(ACHIEVEMENTS.map(a => a.category))];
+---
+
+<BaseLayout title="Activities & Projects | Aoristos" description="Aoristosの活動実績、研究プロジェクトの詳細な一覧。">
+  <div class="py-32 px-6 bg-white min-h-screen">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="mb-16">
+        <a href="/" class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-[var(--color-aoristos-green)] transition-colors mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Home
+        </a>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Activities Directory</h1>
+        <p class="text-lg text-gray-500 font-light">
+          各分野・各イベントの活動と研究記録のインデックス。
+        </p>
+      </div>
+
+      <div class="space-y-16">
+        {categories.map(category => (
+          <section>
+            <h2 class="text-2xl font-bold border-b-2 border-[var(--color-aoristos-green)] pb-2 mb-6 inline-block">
+              {category}
+            </h2>
+            <ul class="space-y-4">
+              {ACHIEVEMENTS.filter(a => a.category === category).map(achievement => (
+                <li class="group">
+                  {achievement.link ? (
+                    <a href={achievement.link} target="_blank" rel="noopener noreferrer" class="block p-4 border border-gray-100 hover:border-[var(--color-aoristos-green)]/50 rounded-lg transition-all hover:bg-gray-50">
+                      <h3 class="text-lg font-medium text-gray-900 group-hover:text-[var(--color-aoristos-green)] transition-colors flex items-center justify-between">
+                        {achievement.title}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </h3>
+                      <p class="text-sm text-gray-500 mt-2">{achievement.description}</p>
+                    </a>
+                  ) : (
+                    <div class="block p-4 border border-gray-100 rounded-lg bg-gray-50/50">
+                      <h3 class="text-lg font-medium text-gray-800">{achievement.title}</h3>
+                      <p class="text-sm text-gray-500 mt-2">{achievement.description}</p>
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

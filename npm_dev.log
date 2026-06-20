@@ -1,0 +1,32 @@
+
+> zany-zero@0.0.1 dev
+> astro dev
+
+[vite] connected.
+14:50:15 [types] Generated 1ms
+[vite] connected.
+14:50:15 [vite] Re-optimizing dependencies because vite config has changed
+ astro  v6.4.8 ready in 1812 ms
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+14:50:15 watching for file changes...
+14:51:26 [200] / 42ms
+14:51:26 [404] /icons/placeholder-hero-symbol.svg 7ms
+14:51:26 [404] /icons/placeholder-symbol.svg 4ms
+14:51:27 [404] /icons/placeholder-symbol.svg 1ms
+14:51:28 [404] /icons/placeholder-hero-symbol.svg 2ms
+14:51:28 [404] /icons/placeholder-symbol.svg 1ms
+14:51:28 [404] /icons/placeholder-symbol.svg 1ms
+14:51:28 [404] /icons/placeholder-symbol.svg 1ms
+14:51:28 [404] /icons/placeholder-symbol.svg 1ms
+14:51:28 [404] /icons/placeholder-symbol.svg 1ms
+14:51:31 [200] /activities 24ms
+14:51:34 [200] / 3ms
+14:51:34 [404] /icons/placeholder-hero-symbol.svg 1ms
+14:51:34 [404] /icons/placeholder-symbol.svg 1ms
+14:51:34 [404] /icons/placeholder-hero-symbol.svg 1ms
+14:51:34 [404] /icons/placeholder-symbol.svg 1ms
+14:51:34 [404] /icons/placeholder-symbol.svg 1ms
+14:51:34 [404] /icons/placeholder-symbol.svg 0ms
+14:51:34 [404] /icons/placeholder-symbol.svg 1ms
+14:51:34 [404] /icons/placeholder-symbol.svg 0ms
