@@ -1,7 +1,7 @@
 // Placeholders and global strings
 
-export const SITE_TITLE = 'Aoristos | 大阪星光学院 学術探索ギルド';
-export const SITE_DESCRIPTION = '未定義な知が共鳴する。学校教育に定義されない、自発的な学習と研究を行う組織。';
+export const SITE_TITLE = 'Aoristos | 大阪星光学院 自学団体';
+export const SITE_DESCRIPTION = '未定義な知が共鳴する。学校教育に定義されない、自発的な学習と研究を行う集団。';
 
 export const MEMBERS = [
   {
@@ -20,7 +20,7 @@ export const MEMBERS = [
     name: 'sonneko',
     role: '対外リーダー',
     specialties: ['情報', '科学全般', '哲学', '数学'],
-    icon: '/icons/placeholder-symbol.svg', // TASK: Replace with actual abstract symbol path
+    icon: '/icons/member-sonneko.png',
   },
   {
     name: 'ゴムけし',
@@ -53,16 +53,21 @@ export const ACHIEVEMENTS = [
     category: 'Chemistry',
   },
   {
+    title: 'リアビズ',
+    description: '全国金賞',
+    category: 'Business',
+  },
+  {
     title: 'Rustを参考にした現代的なコンパイラ開発のメソッド',
     description: '日本語ではほとんど唯一の文献のZennでの公開 (sonneko)',
     category: 'Computer Science',
-    link: 'https://zenn.dev/dummy-url', // TASK: Replace with actual URL
+    link: 'https://zenn.dev/sonneko/books/4c66e31549640b',
   },
   {
     title: 'アルメニア文法解説',
     description: 'notesでの公開。その他ギリシャ紀行など、多数の専門的文献',
     category: 'Linguistics',
-    link: 'https://note.com/dummy-url', // TASK: Replace with actual URL
+    link: 'https://note.com/clear_pika621',
   },
   {
     title: '言語についての自主ゼミ',

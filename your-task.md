@@ -15,9 +15,3 @@ Please complete the following tasks after the setup is completed:
 
 ## 4. Activities Page Content
 - The index for the detailed activities page (`src/pages/activities/index.astro`) has been scaffolded. You can expand this directory by adding separate files for each field or event (e.g. `src/pages/activities/physics.astro`).
-
-## 5. Hero Section
-- **Hero Symbol**: Provide an abstract geometric symbol for the hero section background. Put it into `public/icons/placeholder-hero-symbol.svg`.
-
-## 6. Philosophy Background Image
-- **Philosophy BG**: Provide a faint background image for the Philosophy section. Put it into `public/images/philosophy-bg.webp` (or adjust the extension in `src/pages/index.astro`).

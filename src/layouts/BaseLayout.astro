@@ -34,7 +34,8 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
     <!-- Fixed Header -->
     <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
       <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="/" class="text-xl font-bold tracking-widest text-aoristos-dark hover:text-aoristos-green transition-colors">
+        <a href="/" class="flex items-center gap-2 text-xl font-bold tracking-widest text-aoristos-dark hover:text-aoristos-green transition-colors">
+          <img src="/icons/aoristos-icon.svg" alt="Aoristos Icon" class="w-6 h-6 object-cover" />
           Aoristos
         </a>
         <nav class="hidden md:flex gap-8 text-sm font-medium tracking-wide">

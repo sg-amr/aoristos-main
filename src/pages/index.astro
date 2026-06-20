@@ -26,11 +26,6 @@ import MemberCard from '../components/MemberCard.astro';
              </h2>
           </div>
 
-          <div class="absolute inset-0 z-0 flex items-center justify-center opacity-5 pointer-events-none">
-            <img src="/icons/placeholder-hero-symbol.svg" alt="" class="w-full max-w-4xl object-contain" />
-          </div>
-
-
           <div class="relative z-10 text-center">
             <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-gray-900 leading-tight">
               未定義な知が<br class="md:hidden" />
@@ -59,8 +54,249 @@ import MemberCard from '../components/MemberCard.astro';
           <div id="philosophy-scale-container" class="absolute w-[100vw] h-[100vh] flex items-center justify-center" style="transform: scale(0.1); transform-origin: center center;">
 
             <div id="philosophy-content" class="w-full h-full relative opacity-0 transition-opacity duration-500 flex items-center justify-center p-6">
-              <!-- Subtle background image -->
-              <div class="absolute inset-0 z-0 opacity-10 bg-[url('/images/philosophy-bg.webp')] bg-cover bg-center mix-blend-multiply pointer-events-none"></div>
+              <!-- Subtle background animation -->
+              <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none opacity-[0.06] mix-blend-multiply text-emerald-950">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" class="w-full max-w-5xl h-auto">
+                  <defs>
+                    <mask id="sun-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="500">
+                      <rect x="0" y="0" width="1000" height="500" fill="white" />
+                      <rect x="0" y="400" width="1000" height="100" fill="black" />
+                      <rect x="50" y="200" width="250" height="200" fill="black" />
+                      <rect x="750" y="240" width="160" height="160" fill="black" />
+                      <polygon points="730,240 830,160 930,240" fill="black" />
+                    </mask>
+
+                    <g id="walk-man-fast" stroke="currentColor">
+                      <line x1="0" y1="10" x2="0" y2="30"><animateTransform attributeName="transform" type="rotate" values="30 0 10; -30 0 10; 30 0 10" dur="0.4s" repeatCount="indefinite" /></line>
+                      <line x1="0" y1="30" x2="0" y2="55"><animateTransform attributeName="transform" type="rotate" values="-35 0 30; 35 0 30; -35 0 30" dur="0.4s" repeatCount="indefinite" /></line>
+                      <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.2s" repeatCount="indefinite" /><circle cx="0" cy="0" r="7" /></g>
+                      <line x1="0" y1="7" x2="0" y2="30" /><line x1="0" y1="30" x2="0" y2="55"><animateTransform attributeName="transform" type="rotate" values="35 0 30; -35 0 30; 35 0 30" dur="0.4s" repeatCount="indefinite" /></line>
+                      <line x1="0" y1="10" x2="0" y2="30"><animateTransform attributeName="transform" type="rotate" values="-30 0 10; 30 0 10; -30 0 10" dur="0.4s" repeatCount="indefinite" /></line>
+                    </g>
+                    <g id="walk-man-slow" stroke="currentColor">
+                      <line x1="0" y1="10" x2="0" y2="30"><animateTransform attributeName="transform" type="rotate" values="30 0 10; -30 0 10; 30 0 10" dur="0.8s" repeatCount="indefinite" /></line>
+                      <line x1="0" y1="30" x2="0" y2="55"><animateTransform attributeName="transform" type="rotate" values="-35 0 30; 35 0 30; -35 0 30" dur="0.8s" repeatCount="indefinite" /></line>
+                      <g><animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="0.4s" repeatCount="indefinite" /><circle cx="0" cy="0" r="7" /></g>
+                      <line x1="0" y1="7" x2="0" y2="30" /><line x1="0" y1="30" x2="0" y2="55"><animateTransform attributeName="transform" type="rotate" values="35 0 30; -35 0 30; 35 0 30" dur="0.8s" repeatCount="indefinite" /></line>
+                      <line x1="0" y1="10" x2="0" y2="30"><animateTransform attributeName="transform" type="rotate" values="-30 0 10; 30 0 10; -30 0 10" dur="0.8s" repeatCount="indefinite" /></line>
+                    </g>
+                    <g id="write-man" stroke="currentColor">
+                      <line x1="0" y1="10" x2="-10" y2="25"><animateTransform attributeName="transform" type="rotate" values="0 0 10; -20 0 10; 0 0 10" dur="2s" repeatCount="indefinite" /></line>
+                      <line x1="0" y1="30" x2="-10" y2="55" />
+                      <g><animateTransform attributeName="transform" type="rotate" values="-10 0 10; 5 0 10; -10 0 10" dur="1.5s" repeatCount="indefinite" /><circle cx="0" cy="0" r="7" /></g>
+                      <line x1="0" y1="7" x2="0" y2="30" /><line x1="0" y1="30" x2="10" y2="55" />
+                      <line x1="0" y1="10" x2="18" y2="-5"><animateTransform attributeName="transform" type="rotate" values="0 0 10; -15 0 10; 5 0 10; -10 0 10; 0 0 10" dur="0.6s" repeatCount="indefinite" /></line>
+                    </g>
+                    <g id="listen-man" stroke="currentColor">
+                      <line x1="0" y1="10" x2="-5" y2="28" /><line x1="0" y1="30" x2="-8" y2="55" />
+                      <g><animateTransform attributeName="transform" type="rotate" values="0 0 10; 15 0 10; 0 0 10; 15 0 10; 0 0 10; 0 0 10" keyTimes="0; 0.1; 0.2; 0.3; 0.4; 1" dur="2.5s" repeatCount="indefinite" /><circle cx="0" cy="0" r="7" /></g>
+                      <line x1="0" y1="7" x2="0" y2="30" /><line x1="0" y1="30" x2="8" y2="55" /><line x1="0" y1="10" x2="8" y2="2" />
+                    </g>
+                    <g id="think-man" stroke="currentColor">
+                      <g transform="rotate(5 0 30)">
+                        <line x1="0" y1="10" x2="-12" y2="22" /><line x1="0" y1="30" x2="-5" y2="55" />
+                        <g><animateTransform attributeName="transform" type="rotate" values="-15 0 10; 10 0 10; -15 0 10" dur="5s" repeatCount="indefinite" /><circle cx="0" cy="0" r="7" /></g>
+                        <line x1="0" y1="7" x2="0" y2="30" /><line x1="0" y1="30" x2="12" y2="55" /><line x1="0" y1="10" x2="10" y2="5" />
+                      </g>
+                    </g>
+                    <g id="explain-man" stroke="currentColor">
+                      <line x1="0" y1="10" x2="15" y2="20"><animateTransform attributeName="transform" type="rotate" values="0 0 10; -20 0 10; 0 0 10" dur="1.5s" repeatCount="indefinite" /></line>
+                      <line x1="0" y1="30" x2="-5" y2="55" />
+                      <g><animateTransform attributeName="transform" type="rotate" values="-5 0 10; 10 0 10; -5 0 10" dur="2s" repeatCount="indefinite" /><circle cx="0" cy="0" r="7" /></g>
+                      <line x1="0" y1="7" x2="0" y2="30" /><line x1="0" y1="30" x2="5" y2="55" />
+                      <line x1="0" y1="10" x2="10" y2="5"><animateTransform attributeName="transform" type="rotate" values="0 0 10; 20 0 10; 0 0 10" dur="2s" repeatCount="indefinite" /></line>
+                    </g>
+                    <g id="sleep-man" stroke="currentColor">
+                      <line x1="-15" y1="8" x2="35" y2="8" stroke-width="2" />
+                      <g>
+                        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -1.5; 0 0" dur="2.5s" repeatCount="indefinite" />
+                        <circle cx="-5" cy="0" r="6" />
+                        <line x1="1" y1="0" x2="18" y2="0" />
+                        <line x1="18" y1="0" x2="25" y2="-4" />
+                        <line x1="25" y1="-4" x2="32" y2="0" />
+                        <line x1="5" y1="0" x2="12" y2="-3" />
+                      </g>
+                      <g stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <g>
+                          <animateTransform attributeName="transform" type="translate" values="-10 -15; -5 -25" dur="2.5s" repeatCount="indefinite" />
+                          <animate attributeName="opacity" values="0; 1; 0" dur="2.5s" repeatCount="indefinite" />
+                          <polyline points="0,0 5,0 0,5 5,5" fill="none" />
+                        </g>
+                        <g>
+                          <animateTransform attributeName="transform" type="translate" values="-5 -5; 0 -15" dur="2.5s" begin="1.25s" repeatCount="indefinite" />
+                          <animate attributeName="opacity" values="0; 1; 0" dur="2.5s" begin="1.25s" repeatCount="indefinite" />
+                          <polyline points="0,0 3,0 0,3 3,3" fill="none" />
+                        </g>
+                      </g>
+                    </g>
+
+                  </defs>
+
+                  <g fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="0" y1="400" x2="1000" y2="400" />
+                    
+                    <g mask="url(#sun-mask)">
+                      <g>
+
+                        <animateTransform attributeName="transform" type="rotate" from="0 500 500" to="360 500 500" dur="12s" repeatCount="indefinite" />
+
+                        <g transform="translate(50 500)">
+                          <circle cx="0" cy="0" r="25" />
+                          <g>
+                            <animateTransform attributeName="transform" type="scale" values="1; 1.25; 1" dur="1s" repeatCount="indefinite" />
+                            <line x1="0" y1="-30" x2="0" y2="-45" /><line x1="0" y1="30" x2="0" y2="45" />
+                            <line x1="-30" y1="0" x2="-45" y2="0" /><line x1="30" y1="0" x2="45" y2="0" />
+                            <line x1="21.2" y1="21.2" x2="31.8" y2="31.8" /><line x1="-21.2" y1="-21.2" x2="-31.8" y2="-31.8" />
+                            <line x1="21.2" y1="-21.2" x2="31.8" y2="-31.8" /><line x1="-21.2" y1="21.2" x2="-31.8" y2="31.8" />
+                          </g>
+                        </g>
+
+                        <g transform="translate(950 500) rotate(90)">
+                          <path d="M 0,-22 A 22,22 0 1,0 0,22 A 28,28 0 0,1 0,-22" />
+                        </g>
+
+                      </g>
+                    </g>
+
+                    <rect x="50" y="200" width="250" height="200" />
+                    <rect x="60" y="385" width="40" height="15" />
+                    
+                    <circle cx="175" cy="250" r="35" />
+                    <line x1="175" y1="215" x2="175" y2="223" /><line x1="175" y1="215" x2="175" y2="223" transform="rotate(30 175 250)" />
+                    <line x1="175" y1="215" x2="175" y2="223" transform="rotate(60 175 250)" /><line x1="175" y1="215" x2="175" y2="223" transform="rotate(90 175 250)" />
+                    <line x1="175" y1="215" x2="175" y2="223" transform="rotate(120 175 250)" /><line x1="175" y1="215" x2="175" y2="223" transform="rotate(150 175 250)" />
+                    <line x1="175" y1="215" x2="175" y2="223" transform="rotate(180 175 250)" /><line x1="175" y1="215" x2="175" y2="223" transform="rotate(210 175 250)" />
+                    <line x1="175" y1="215" x2="175" y2="223" transform="rotate(240 175 250)" /><line x1="175" y1="215" x2="175" y2="223" transform="rotate(270 175 250)" />
+                    <line x1="175" y1="215" x2="175" y2="223" transform="rotate(300 175 250)" /><line x1="175" y1="215" x2="175" y2="223" transform="rotate(330 175 250)" />
+                    <line x1="175" y1="250" x2="175" y2="230" stroke-width="4"><animateTransform attributeName="transform" type="rotate" from="180 175 250" to="900 175 250" dur="12s" repeatCount="indefinite" /></line>
+                    <line x1="175" y1="250" x2="175" y2="220" stroke-width="2"><animateTransform attributeName="transform" type="rotate" from="0 175 250" to="8640 175 250" dur="12s" repeatCount="indefinite" /></line>
+                    <circle cx="175" cy="250" r="3" />
+                    
+                    <rect x="380" y="250" width="240" height="120" />
+                    <line x1="500" y1="250" x2="500" y2="370" /><line x1="370" y1="370" x2="630" y2="370" />
+                    <line x1="400" y1="370" x2="380" y2="395" /><circle cx="380" cy="395" r="5" />
+                    <line x1="600" y1="370" x2="620" y2="395" /><circle cx="620" cy="395" r="5" />
+                  </g>
+
+                  <g fill="none" stroke-width="2.5" stroke-linecap="round">
+                    <g class="phase-school">
+                      <g color="black" transform="translate(80, 330)"><use href="#explain-man" /></g>
+                      <g color="red"   transform="translate(140, 345) scale(-1, 1)"><use href="#listen-man" /></g>
+                      <g color="black" transform="translate(180, 345) scale(-1, 1)"><use href="#listen-man" /></g>
+                      <g color="black" transform="translate(220, 345) scale(-1, 1)"><use href="#listen-man" /></g>
+                      <g color="black" transform="translate(260, 345) scale(-1, 1)"><use href="#listen-man" /></g>
+                    </g>
+
+                    <g class="phase-trans1">
+                      <g color="red">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.2083; 0.2916; 1" values="140 0; 140 0; 540 0; 540 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                      <g color="black">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.2083; 0.2916; 1" values="180 0; 180 0; 430 0; 430 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                      <g color="black">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.2083; 0.2916; 1" values="220 0; 220 0; 680 0; 680 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                      <g color="black">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.2083; 0.2916; 1" values="260 0; 260 0; 350 0; 350 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                    </g>
+
+                    <g class="phase-trans-teacher-leave" color="black">
+                      <g>
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.2083; 0.22; 0.2916; 1" values="80 330; 80 330; 50 345; -50 345; -50 345" dur="12s" repeatCount="indefinite" />
+                        <g transform="scale(-1, 1)"><use href="#walk-man-fast" x="0" y="0" /></g>
+                      </g>
+                    </g>
+
+                    <g class="phase-wb">
+                      <g color="red"   transform="translate(540, 345) scale(-1, 1)"><use href="#write-man" /></g>
+                      <g color="black" transform="translate(430, 345)"><use href="#listen-man" /></g>
+                      <g color="black" transform="translate(680, 345) scale(-1, 1)"><use href="#think-man" /></g>
+                      
+                      <g color="black">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.2916; 0.4583; 0.625; 1" values="350 345; 350 345; 550 345; 350 345; 350 345" dur="12s" repeatCount="indefinite" />
+                        <g>
+                          <animateTransform attributeName="transform" type="scale" keyTimes="0; 0.4582; 0.4583; 0.625; 1" values="1 1; 1 1; -1 1; -1 1; 1 1" dur="12s" repeatCount="indefinite" />
+                          <use href="#walk-man-slow" />
+                        </g>
+                      </g>
+                    </g>
+
+                    <g class="phase-trans2">
+                      <g color="red">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.625; 0.7083; 1" values="540 0; 540 0; 845 0; 845 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                      <g color="black">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.625; 0.7083; 1" values="430 0; 430 0; 1100 0; 1100 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                      <g color="black">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.625; 0.7083; 1" values="680 0; 680 0; 1150 0; 1150 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                      <g color="black">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.625; 0.7083; 1" values="350 0; 350 0; 1200 0; 1200 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                    </g>
+
+                    <g class="phase-home">
+                      <g color="red" transform="translate(845, 315)">
+                        <use href="#sleep-man" />
+                      </g>
+                    </g>
+
+                    <g class="phase-trans-teacher-enter" color="black">
+                      <g>
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.9166; 0.94; 0.9583; 1" values="-50 345; -50 345; 50 345; 80 330; 80 330" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="0" />
+                      </g>
+                    </g>
+
+                    <g class="phase-trans3">
+                      <g color="red">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.9583; 1" values="-50 0; -50 0; 140 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                      <g color="black">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.9583; 1" values="-90 0; -90 0; 180 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                      <g color="black">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.9583; 1" values="-130 0; -130 0; 220 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                      <g color="black">
+                        <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.9583; 1" values="-170 0; -170 0; 260 0" dur="12s" repeatCount="indefinite" />
+                        <use href="#walk-man-fast" x="0" y="345" />
+                      </g>
+                    </g>
+
+                  </g>
+
+                  <g fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="750" y="240" width="160" height="160" />
+                    <polygon points="730,240 830,160 930,240" />
+                    
+                    <rect x="770" y="320" width="40" height="80" fill="white" />
+                    <circle cx="800" cy="360" r="3" />
+                    
+                    <rect x="830" y="270" width="30" height="30" />
+                    <rect x="860" y="270" width="30" height="30" />
+                    <rect x="830" y="300" width="30" height="30" />
+                    <rect x="860" y="300" width="30" height="30" />
+                  </g>
+
+                </svg>
+
+              </div>
 
               <div class="relative z-10 max-w-4xl mx-auto w-full mt-16 md:mt-0">
                 <h2 class="text-xs font-bold tracking-[0.2em] text-[var(--color-aoristos-green)] uppercase mb-8 md:mb-12 text-center">Philosophy</h2>
@@ -163,6 +399,56 @@ import MemberCard from '../components/MemberCard.astro';
     </section>
 
   </div>
+
+  <style>
+    .phase-school { animation: show-school 12s infinite; }
+    .phase-trans1 { animation: show-trans1 12s infinite; }
+    .phase-trans-teacher-leave { animation: show-teacher-leave 12s infinite; }
+    .phase-wb     { animation: show-wb 12s infinite; }
+    .phase-trans2 { animation: show-trans2 12s infinite; }
+    .phase-home   { animation: show-home 12s infinite; }
+    .phase-trans-teacher-enter { animation: show-teacher-enter 12s infinite; }
+    .phase-trans3 { animation: show-trans3 12s infinite; }
+
+    @keyframes show-school {
+      0%, 20.83% { opacity: 1; }
+      20.84%, 100% { opacity: 0; }
+    }
+    @keyframes show-trans1 {
+      0%, 20.83% { opacity: 0; }
+      20.84%, 29.16% { opacity: 1; }
+      29.17%, 100% { opacity: 0; }
+    }
+    @keyframes show-teacher-leave {
+      0%, 20.83% { opacity: 0; }
+      20.84%, 29.16% { opacity: 1; }
+      29.17%, 100% { opacity: 0; }
+    }
+    @keyframes show-wb {
+      0%, 29.16% { opacity: 0; }
+      29.17%, 62.50% { opacity: 1; }
+      62.51%, 100% { opacity: 0; }
+    }
+    @keyframes show-trans2 {
+      0%, 62.50% { opacity: 0; }
+      62.51%, 70.83% { opacity: 1; }
+      70.84%, 100% { opacity: 0; }
+    }
+    @keyframes show-home {
+      0%, 70.83% { opacity: 0; }
+      70.84%, 95.83% { opacity: 1; }
+      95.84%, 100% { opacity: 0; }
+    }
+    @keyframes show-teacher-enter {
+      0%, 91.66% { opacity: 0; }
+      91.67%, 95.83% { opacity: 1; }
+      95.84%, 100% { opacity: 0; }
+    }
+    @keyframes show-trans3 {
+      0%, 95.83% { opacity: 0; }
+      95.84%, 100% { opacity: 1; }
+    }
+  </style>
 
   <script>
 
