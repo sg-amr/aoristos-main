@@ -24,3 +24,9 @@
     font-family: 'Noto Serif JP', serif;
   }
 }
+
+  /* Loading Bar Animation */
+  @keyframes slide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(300%); }
+  }

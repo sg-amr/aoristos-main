@@ -87,3 +87,19 @@ Error: Failed to load url astro:server-app.js (resolved id: astro:server-app.js)
 09:21:29 [404] /icons/placeholder-symbol.svg 1ms
 09:21:29 [404] /icons/placeholder-symbol.svg 0ms
 09:21:29 [404] /icons/placeholder-symbol.svg 1ms
+09:33:55 [watch] /src/styles/global.css
+09:36:40 [watch] /src/styles/global.css
+09:36:40 [watch] /src/styles/global.css
+09:39:10 [200] / 73ms
+09:39:10 [404] /icons/placeholder-hero-symbol.svg 27ms
+09:39:10 [404] /icons/placeholder-symbol.svg 3ms
+09:39:10 [404] /icons/placeholder-symbol.svg 1ms
+09:39:10 [404] /images/philosophy-bg.webp 0ms
+09:39:11 [404] /icons/placeholder-hero-symbol.svg 1ms
+09:39:11 [404] /icons/placeholder-symbol.svg 1ms
+09:39:11 [404] /icons/placeholder-symbol.svg 1ms
+09:39:11 [404] /icons/placeholder-symbol.svg 1ms
+09:39:11 [404] /icons/placeholder-symbol.svg 2ms
+09:39:11 [404] /icons/placeholder-symbol.svg 1ms
+09:41:39 [watch] src/layouts/BaseLayout.astro
+09:45:23 [watch] src/layouts/BaseLayout.astro
