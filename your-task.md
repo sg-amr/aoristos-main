@@ -18,3 +18,6 @@ Please complete the following tasks after the setup is completed:
 
 ## 5. Hero Section
 - **Hero Symbol**: Provide an abstract geometric symbol for the hero section background. Put it into `public/icons/placeholder-hero-symbol.svg`.
+
+## 6. Philosophy Background Image
+- **Philosophy BG**: Provide a faint background image for the Philosophy section. Put it into `public/images/philosophy-bg.webp` (or adjust the extension in `src/pages/index.astro`).
