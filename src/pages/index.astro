@@ -1,133 +1,215 @@
 ---
-import { ACHIEVEMENTS, MEMBERS } from '../consts';
-import MemberCard from '../components/MemberCard.astro';
-import AchievementCard from '../components/AchievementCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { ACHIEVEMENTS, MEMBERS } from '../consts';
+import AchievementCard from '../components/AchievementCard.astro';
+import MemberCard from '../components/MemberCard.astro';
 ---
 
 <BaseLayout>
-  <!-- HERO SECTION -->
-  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white px-6">
-    <!-- Abstract background symbol placeholder -->
-    <div class="absolute inset-0 z-0 flex items-center justify-center opacity-5 pointer-events-none">
-      <img src="/icons/placeholder-hero-symbol.svg" alt="" class="w-full max-w-4xl object-contain" />
-      <!-- TASK: Provide an abstract geometric symbol as placeholder-hero-symbol.svg -->
+  <!-- Page Load Animation Wrapper -->
+  <div id="page-content" class="opacity-0 transition-opacity duration-1000 ease-out">
+
+    <!-- Cinematic Scroll Section (Hero -> Philosophy Transition) -->
+    <!-- We make this container very tall so the user can scroll through the sticky states -->
+    <div class="relative w-full h-[300vh]">
+
+      <!-- STICKY CONTAINER -->
+      <div class="sticky top-0 left-0 w-full h-screen overflow-hidden bg-white">
+
+        <!-- HERO CONTENT -->
+        <div id="hero-content" class="absolute inset-0 flex flex-col items-center justify-center z-10 px-6 transition-opacity duration-500">
+          <div class="absolute inset-0 z-0 flex items-center justify-center opacity-5 pointer-events-none">
+            <img src="/icons/placeholder-hero-symbol.svg" alt="" class="w-full max-w-4xl object-contain" />
+          </div>
+
+          <div class="relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-gray-900 leading-tight">
+              未定義な知が<br class="md:hidden" />
+              <!-- Text Fill Animation -->
+              <span class="relative inline-block text-gray-200">
+                共鳴
+                <span id="text-fill" class="absolute left-0 top-0 overflow-hidden w-[0%] text-[var(--color-aoristos-green)] whitespace-nowrap" style="transition: width 0.1s ease-out;">
+                  共鳴
+                </span>
+              </span>
+              する。
+            </h1>
+            <p class="text-lg md:text-xl text-gray-500 font-light tracking-wide max-w-2xl mx-auto">
+              Aoristos — Osaka Seiko Gakuin (Unofficial) Academic Exploration Guild
+            </p>
+          </div>
+        </div>
+
+        <!-- EXPANDING RECTANGLE TRANSITION -->
+        <div id="transition-bg" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[10%] h-0 bg-gradient-to-b from-white to-[#F0FDF4] z-20 overflow-hidden" style="border-top-left-radius: 50%; border-top-right-radius: 50%;">
+
+          <!-- PHILOSOPHY CONTENT (Fades in when rectangle fills screen) -->
+          <div id="philosophy-content" class="absolute inset-0 opacity-0 flex items-center justify-center p-6 transition-opacity duration-700 delay-100">
+            <!-- Subtle background image -->
+            <div class="absolute inset-0 z-0 opacity-10 bg-[url('/images/philosophy-bg.webp')] bg-cover bg-center mix-blend-multiply"></div>
+
+            <div class="relative z-10 max-w-4xl mx-auto w-full">
+              <h2 class="text-xs font-bold tracking-[0.2em] text-[var(--color-aoristos-green)] uppercase mb-12 text-center">Philosophy</h2>
+
+              <div class="space-y-16">
+                <div class="text-center">
+                  <!-- Unified font (removed font-serif-jp) -->
+                  <h3 class="text-2xl md:text-4xl font-bold mb-8 leading-snug text-gray-900">
+                    なぜ私たちは、「学校非公式」であることにこだわるのか。
+                  </h3>
+                  <p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                    私たちの活動は、「先生に指示された研究」ではありません。<br class="hidden md:block"/>
+                    純粋な知的好奇心に引きずられると、自然と教科書から離れていく。<br class="hidden md:block"/>
+                    その結果として生まれる「勝手にやっている研究」にこそ、真の価値があると信じています。
+                  </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-[var(--color-aoristos-green)]/20">
+                  <div>
+                    <h4 class="text-xl font-bold mb-4 flex items-center gap-3 text-gray-900">
+                      <span class="w-2 h-2 bg-[var(--color-aoristos-green)] rounded-full shadow-[0_0_8px_rgba(132,204,22,0.8)]"></span>
+                      Aoristos = "未定義"
+                    </h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                      私たちの名前は「定義されない」を意味します。学校教育の枠組みに定義されず、自発的な学習と研究を行う精神の象徴です。カオスな熱量を持ちつつ、時として深く結合するギルドであり続けます。
+                    </p>
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-bold mb-4 flex items-center gap-3 text-gray-900">
+                      <span class="w-2 h-2 bg-[var(--color-aoristos-green)] rounded-full shadow-[0_0_8px_rgba(132,204,22,0.8)]"></span>
+                      学問の自己探求
+                    </h4>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                      学術オリンピックでの活躍と、自己満足的な学習研究。各々が自由散漫に突き進む中で、「実は同じことをしていた」と気づく瞬間があります。その知の共鳴を共有することこそが、私たちの真の目的です。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+    <!-- END Cinematic Scroll Section -->
 
-    <div class="relative z-10 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-gray-900 leading-tight">
-        未定義な知が<br class="md:hidden" /><span class="text-[var(--color-aoristos-green)]">共鳴</span>する。
-      </h1>
-      <p class="text-lg md:text-xl text-gray-500 font-light tracking-wide max-w-2xl mx-auto">
-        Aoristos — Osaka Seiko Gakuin (Unofficial) Academic Exploration Guild
-      </p>
-    </div>
 
-    <div class="absolute bottom-12 animate-bounce">
-      <a href="#philosophy" class="text-gray-400 hover:text-gray-800 transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </a>
-    </div>
-  </section>
+    <!-- ACHIEVEMENTS SECTION (C) -->
+    <section id="achievements" class="py-32 px-6 bg-white relative z-30">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div>
+            <h2 class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-4">Achievements & Projects</h2>
+            <h3 class="text-3xl font-bold text-gray-900">圧倒的な熱量と、その軌跡。</h3>
+          </div>
+          <a href="/activities" class="inline-flex items-center text-sm font-bold text-[var(--color-aoristos-green)] hover:text-green-600 transition-colors">
+            View All Activities
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
 
-  <!-- PHILOSOPHY SECTION (B) -->
-  <section id="philosophy" class="py-32 px-6 bg-white">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-12 text-center">Philosophy</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {ACHIEVEMENTS.map((achievement) => (
+            <AchievementCard
+              title={achievement.title}
+              description={achievement.description}
+              category={achievement.category}
+              link={achievement.link}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
 
-      <div class="space-y-16">
-        <div class="text-center">
-          <h3 class="text-2xl md:text-4xl font-serif-jp font-bold mb-8 leading-snug">
-            なぜ私たちは、「学校非公式」であることにこだわるのか。
-          </h3>
-          <p class="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto font-serif-jp">
-            私たちの活動は、「先生に指示された研究」ではありません。<br class="hidden md:block"/>
-            純粋な知的好奇心に引きずられると、自然と教科書から離れていく。<br class="hidden md:block"/>
-            その結果として生まれる「勝手にやっている研究」にこそ、真の価値があると信じています。
+    <!-- MEMBERS SECTION (A) -->
+    <section id="members" class="py-32 px-6 bg-gray-50/50 relative z-30">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-4">Core Members</h2>
+          <h3 class="text-3xl font-bold text-gray-900 mb-6">個の専門性、知の特異点。</h3>
+          <p class="text-gray-500 max-w-2xl mx-auto">
+            それぞれの領域に深く潜ることで生み出される、高校生という枠組みを超えた圧倒的な専門性。
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-gray-100">
-          <div>
-            <h4 class="text-xl font-bold mb-4 flex items-center gap-3">
-              <span class="w-2 h-2 bg-[var(--color-aoristos-green)] rounded-full"></span>
-              Aoristos = "未定義"
-            </h4>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              私たちの名前は「定義されない」を意味します。学校教育の枠組みに定義されず、自発的な学習と研究を行う精神の象徴です。カオスな熱量を持ちつつ、時として深く結合するギルドであり続けます。
-            </p>
-          </div>
-          <div>
-            <h4 class="text-xl font-bold mb-4 flex items-center gap-3">
-              <span class="w-2 h-2 bg-[var(--color-aoristos-green)] rounded-full"></span>
-              学問の自己探求
-            </h4>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              学術オリンピックでの活躍と、自己満足的な学習研究。各々が自由散漫に突き進む中で、「実は同じことをしていた」と気づく瞬間があります。その知の共鳴を共有することこそが、私たちの真の目的です。
-            </p>
-          </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          {MEMBERS.map(member => (
+            <MemberCard
+              name={member.name}
+              role={member.role}
+              specialties={member.specialties}
+              icon={member.icon}
+            />
+          ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </div>
+
+  <script>
+    // --- Page Load Animation ---
+    document.addEventListener("DOMContentLoaded", () => {
+      const pageContent = document.getElementById('page-content');
+      if (pageContent) {
+        // Small delay to ensure CSS is ready
+        setTimeout(() => {
+          pageContent.classList.remove('opacity-0');
+        }, 50);
+      }
+    });
 
 
-  <!-- ACHIEVEMENTS SECTION (C) -->
-  <section id="achievements" class="py-32 px-6 bg-gray-50/50">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-        <div>
-          <h2 class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-4">Achievements & Projects</h2>
-          <h3 class="text-3xl font-bold text-gray-900">圧倒的な熱量と、その軌跡。</h3>
-        </div>
-        <a href="/activities" class="inline-flex items-center text-sm font-bold text-[var(--color-aoristos-green)] hover:text-green-600 transition-colors">
-          View All Activities
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
+    // --- Cinematic Scroll Animations ---
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {ACHIEVEMENTS.map((achievement) => (
-          <AchievementCard
-            title={achievement.title}
-            description={achievement.description}
-            category={achievement.category}
-            link={achievement.link}
-          />
-        ))}
-      </div>
-    </div>
-  </section>
+      // 1. Text Fill "共鳴"
+      const textFillPhase = Math.min(Math.max(scrollY / (windowHeight * 0.5), 0), 1);
+      const textFillElement = document.getElementById('text-fill');
+      if (textFillElement) {
+        textFillElement.style.width = `${textFillPhase * 100}%`;
+      }
 
+      // 2. Transition Box Expansion (Github-like curve)
+      const expandStart = windowHeight * 0.5;
+      const expandEnd = windowHeight * 1.5;
+      const expandPhase = Math.min(Math.max((scrollY - expandStart) / (expandEnd - expandStart), 0), 1);
 
-  <!-- MEMBERS SECTION (A) -->
-  <section id="members" class="py-32 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-4">Core Members</h2>
-        <h3 class="text-3xl font-bold text-gray-900 mb-6">個の専門性、知の特異点。</h3>
-        <p class="text-gray-500 max-w-2xl mx-auto">
-          それぞれの領域に深く潜ることで生み出される、高校生という枠組みを超えた圧倒的な専門性。
-        </p>
-      </div>
+      const transitionBg = document.getElementById('transition-bg');
+      if (transitionBg) {
+        const width = 10 + (90 * expandPhase);
+        const height = 100 * expandPhase;
+        const radius = 50 * (1 - expandPhase);
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-        {MEMBERS.map(member => (
-          <MemberCard
-            name={member.name}
-            role={member.role}
-            specialties={member.specialties}
-            icon={member.icon}
-          />
-        ))}
-      </div>
-    </div>
-  </section>
+        transitionBg.style.width = `${width}%`;
+        transitionBg.style.height = `${height}%`;
+        transitionBg.style.borderTopLeftRadius = `${radius}%`;
+        transitionBg.style.borderTopRightRadius = `${radius}%`;
+      }
+
+      // 3. Fade Out Hero & Fade In Philosophy
+      const heroContent = document.getElementById('hero-content');
+      const philosophyContent = document.getElementById('philosophy-content');
+
+      if (heroContent) {
+        heroContent.style.opacity = `${1 - (expandPhase * 2)}`;
+      }
+      if (philosophyContent) {
+        if (expandPhase > 0.8) {
+          philosophyContent.style.opacity = "1";
+        } else {
+          philosophyContent.style.opacity = "0";
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Initialize state in case of mid-page reload
+    document.addEventListener("DOMContentLoaded", handleScroll);
+</script>
 
 </BaseLayout>
-
-
