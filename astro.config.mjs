@@ -7,7 +7,6 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   output: 'static',
   site: 'https://aoristos.net',
-  base: 'aoristos-main',
   vite: {
     plugins: [tailwindcss()]
   }
