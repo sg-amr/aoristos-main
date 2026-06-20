@@ -59,7 +59,7 @@ export const ACHIEVEMENTS = [
   },
   {
     title: 'Rustを参考にした現代的なコンパイラ開発のメソッド',
-    description: '日本語ではほとんど唯一の文献のZennでの公開 (sonneko)',
+    description: '日本語ではほとんど唯一の文献のZennでの公開',
     category: 'Computer Science',
     link: 'https://zenn.dev/sonneko/books/4c66e31549640b',
   },
