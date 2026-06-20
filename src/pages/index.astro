@@ -18,17 +18,41 @@ import MemberCard from '../components/MemberCard.astro';
 
 
         <!-- HERO CONTENT -->
-        <div id="hero-content" class="relative w-full h-full flex flex-col items-center justify-between py-12 md:py-20 z-10 px-6 transition-opacity duration-500 overflow-hidden">
-          <!-- Giant AORISTOS Background -->
-          <div class="w-full">
-             <h2 id="magnetic-text" class="w-full px-4 md:px-12 flex justify-between text-[18vw] md:text-[16vw] font-black text-transparent leading-none" style="-webkit-text-stroke: 1px rgba(156, 163, 175, 0.4);">
-               <span class="inline-block transition-transform duration-300 ease-out">A</span><span class="inline-block transition-transform duration-300 ease-out">O</span><span class="inline-block transition-transform duration-300 ease-out">R</span><span class="inline-block transition-transform duration-300 ease-out">I</span><span class="inline-block transition-transform duration-300 ease-out">S</span><span class="inline-block transition-transform duration-300 ease-out">T</span><span class="inline-block transition-transform duration-300 ease-out">O</span><span class="inline-block transition-transform duration-300 ease-out">S</span>
-             </h2>
+        <div id="hero-content" class="relative w-full h-full flex flex-col items-center justify-center gap-12 md:gap-24 py-12 md:py-20 z-10 px-6 transition-opacity duration-500 overflow-hidden">
+          
+          <!-- Text & Catchcopy Area (Overlapped) -->
+          <div class="relative w-full flex flex-col items-center justify-center">
+            <!-- Giant AORISTOS Background -->
+            <div class="w-full">
+              <h2 id="magnetic-text" class="w-full px-4 md:px-12 flex justify-between text-[18vw] md:text-[16vw] font-black text-transparent leading-none" style="-webkit-text-stroke: 1px rgba(156, 163, 175, 0.4);">
+                <span class="inline-block transition-transform duration-300 ease-out">A</span><span class="inline-block transition-transform duration-300 ease-out">O</span><span class="inline-block transition-transform duration-300 ease-out">R</span><span class="inline-block transition-transform duration-300 ease-out">I</span><span class="inline-block transition-transform duration-300 ease-out">S</span><span class="inline-block transition-transform duration-300 ease-out">T</span><span class="inline-block transition-transform duration-300 ease-out">O</span><span class="inline-block transition-transform duration-300 ease-out">S</span>
+              </h2>
+            </div>
+
+            <!-- Catchcopy & Subtitle -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+              <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4 md:mb-6 text-gray-900 leading-tight pointer-events-auto">
+                  未定義な知が<br class="md:hidden" />
+                  <!-- Text Fill Animation -->
+                  <span class="relative inline-block text-gray-200">
+                    共鳴
+                    <span id="text-fill"
+                      class="absolute left-0 top-0 overflow-hidden w-[0%] text-[var(--color-aoristos-green)] whitespace-nowrap"
+                      style="transition: width 0.1s ease-out;">
+                      共鳴
+                    </span>
+                  </span>
+                  する。
+              </h1>
+              <p class="text-lg md:text-xl text-gray-500 font-light tracking-wide max-w-2xl mx-auto pointer-events-auto px-4">
+                  Aoristos — Osaka Seiko Gakuin (Unofficial) Academic Exploration Guild
+              </p>
+            </div>
           </div>
 
-          <div class="relative z-10 text-center">
+          <div class="relative z-10 text-center w-full max-w-5xl">
             <!-- Subtle background animation -->
-            <div class="flex items-center justify-center pointer-events-none select-none opacity-10 mix-blend-multiply text-emerald-950">
+            <div class="flex items-center justify-center pointer-events-none select-none opacity-10 mix-blend-multiply text-emerald-950 w-full">
 
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" class="w-full max-w-5xl h-auto">
                 <defs>
@@ -108,7 +132,7 @@ import MemberCard from '../components/MemberCard.astro';
 
                 <g fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="0" y1="400" x2="1000" y2="400" />
-                  
+
                   <g mask="url(#sun-mask)">
                     <g>
 
@@ -134,7 +158,7 @@ import MemberCard from '../components/MemberCard.astro';
 
                   <rect x="50" y="200" width="250" height="200" />
                   <rect x="60" y="385" width="40" height="15" />
-                  
+
                   <circle cx="175" cy="250" r="35" />
                   <line x1="175" y1="215" x2="175" y2="223" /><line x1="175" y1="215" x2="175" y2="223" transform="rotate(30 175 250)" />
                   <line x1="175" y1="215" x2="175" y2="223" transform="rotate(60 175 250)" /><line x1="175" y1="215" x2="175" y2="223" transform="rotate(90 175 250)" />
@@ -145,7 +169,7 @@ import MemberCard from '../components/MemberCard.astro';
                   <line x1="175" y1="250" x2="175" y2="230" stroke-width="4"><animateTransform attributeName="transform" type="rotate" from="180 175 250" to="900 175 250" dur="12s" repeatCount="indefinite" /></line>
                   <line x1="175" y1="250" x2="175" y2="220" stroke-width="2"><animateTransform attributeName="transform" type="rotate" from="0 175 250" to="8640 175 250" dur="12s" repeatCount="indefinite" /></line>
                   <circle cx="175" cy="250" r="3" />
-                  
+
                   <rect x="380" y="250" width="240" height="120" />
                   <line x1="500" y1="250" x2="500" y2="370" /><line x1="370" y1="370" x2="630" y2="370" />
                   <line x1="400" y1="370" x2="380" y2="395" /><circle cx="380" cy="395" r="5" />
@@ -191,7 +215,7 @@ import MemberCard from '../components/MemberCard.astro';
                     <g color="red"   transform="translate(540, 345) scale(-1, 1)"><use href="#write-man" /></g>
                     <g color="black" transform="translate(430, 345)"><use href="#listen-man" /></g>
                     <g color="black" transform="translate(680, 345) scale(-1, 1)"><use href="#think-man" /></g>
-                    
+
                     <g color="black">
                       <animateTransform attributeName="transform" type="translate" keyTimes="0; 0.2916; 0.4583; 0.625; 1" values="350 345; 350 345; 550 345; 350 345; 350 345" dur="12s" repeatCount="indefinite" />
                       <g>
@@ -257,10 +281,10 @@ import MemberCard from '../components/MemberCard.astro';
                 <g fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="750" y="240" width="160" height="160" />
                   <polygon points="730,240 830,160 930,240" />
-                  
+
                   <rect x="770" y="320" width="40" height="80" fill="white" />
                   <circle cx="800" cy="360" r="3" />
-                  
+
                   <rect x="830" y="270" width="30" height="30" />
                   <rect x="860" y="270" width="30" height="30" />
                   <rect x="830" y="300" width="30" height="30" />
@@ -270,20 +294,6 @@ import MemberCard from '../components/MemberCard.astro';
               </svg>
 
             </div>
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-gray-900 leading-tight">
-              未定義な知が<br class="md:hidden" />
-              <!-- Text Fill Animation -->
-              <span class="relative inline-block text-gray-200">
-                共鳴
-                <span id="text-fill" class="absolute left-0 top-0 overflow-hidden w-[0%] text-[var(--color-aoristos-green)] whitespace-nowrap" style="transition: width 0.1s ease-out;">
-                  共鳴
-                </span>
-              </span>
-              する。
-            </h1>
-            <p class="text-lg md:text-xl text-gray-500 font-light tracking-wide max-w-2xl mx-auto">
-              Aoristos — Osaka Seiko Gakuin (Unofficial) Academic Exploration Guild
-            </p>
           </div>
         </div>
 
@@ -307,8 +317,8 @@ import MemberCard from '../components/MemberCard.astro';
                       なぜ私たちは、「学校非公式」であることにこだわるのか。
                     </h3>
                     <p class="text-sm md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-                      私たちの活動は、「先生に指示された研究」ではありません。<br class="hidden md:block"/>
-                      純粋な知的好奇心に引きずられると、自然と教科書から離れていく。<br class="hidden md:block"/>
+                      私たちの活動は、「先生に指示された研究」ではありません。<br class="hidden md:block" />
+                      純粋な知的好奇心に引きずられると、自然と教科書から離れていく。<br class="hidden md:block" />
                       その結果として生まれる「勝手にやっている研究」にこそ、真の価値があると信じています。
                     </p>
                   </div>
@@ -363,11 +373,11 @@ import MemberCard from '../components/MemberCard.astro';
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {ACHIEVEMENTS.map((achievement) => (
-            <AchievementCard
-              title={achievement.title}
-              description={achievement.description}
-              category={achievement.category}
-              link={achievement.link}
+          <AchievementCard
+            title={achievement.title}
+            description={achievement.description}
+            category={achievement.category} 
+            link={achievement.link}
             />
           ))}
         </div>
@@ -387,12 +397,12 @@ import MemberCard from '../components/MemberCard.astro';
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {MEMBERS.map(member => (
-            <MemberCard
-              name={member.name}
-              role={member.role}
-              specialties={member.specialties}
-              icon={member.icon}
-            />
+          <MemberCard 
+            name={member.name}
+            role={member.role}
+            specialties={member.specialties}
+            icon={member.icon}
+          />
           ))}
         </div>
       </div>
@@ -404,9 +414,9 @@ import MemberCard from '../components/MemberCard.astro';
     .phase-school { animation: show-school 12s infinite; }
     .phase-trans1 { animation: show-trans1 12s infinite; }
     .phase-trans-teacher-leave { animation: show-teacher-leave 12s infinite; }
-    .phase-wb     { animation: show-wb 12s infinite; }
+    .phase-wb { animation: show-wb 12s infinite; }
     .phase-trans2 { animation: show-trans2 12s infinite; }
-    .phase-home   { animation: show-home 12s infinite; }
+    .phase-home { animation: show-home 12s infinite; }
     .phase-trans-teacher-enter { animation: show-teacher-enter 12s infinite; }
     .phase-trans3 { animation: show-trans3 12s infinite; }
 
@@ -573,6 +583,6 @@ import MemberCard from '../components/MemberCard.astro';
     window.addEventListener("scroll", handleScroll);
     // Initialize state in case of mid-page reload
     document.addEventListener("DOMContentLoaded", handleScroll);
-</script>
+  </script>
 
 </BaseLayout>
