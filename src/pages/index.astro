@@ -11,7 +11,7 @@ import MemberCard from '../components/MemberCard.astro';
 
     <!-- Cinematic Scroll Section (Hero -> Philosophy Transition) -->
     <!-- We make this container very tall so the user can scroll through the sticky states -->
-    <div class="relative w-full h-[300vh]">
+    <div id="philosophy" class="relative w-full h-[200vh]">
 
       <!-- STICKY CONTAINER -->
       <div class="sticky top-0 left-0 w-full h-screen overflow-hidden bg-white">
@@ -21,8 +21,8 @@ import MemberCard from '../components/MemberCard.astro';
         <div id="hero-content" class="absolute inset-0 flex flex-col items-center justify-center z-10 px-6 transition-opacity duration-500 overflow-hidden">
           <!-- Giant AORISTOS Background -->
           <div class="absolute inset-0 flex items-center justify-center z-0 pointer-events-none select-none overflow-hidden">
-             <h2 class="text-[15vw] md:text-[20vw] font-black text-gray-50/80 tracking-tighter leading-none whitespace-nowrap">
-               AORISTOS
+             <h2 id="magnetic-text" class="text-[15vw] md:text-[20vw] font-black text-transparent tracking-tighter leading-none whitespace-nowrap" style="-webkit-text-stroke: 1px rgba(156, 163, 175, 0.4);">
+               <span class="inline-block transition-transform duration-300 ease-out">A</span><span class="inline-block transition-transform duration-300 ease-out">O</span><span class="inline-block transition-transform duration-300 ease-out">R</span><span class="inline-block transition-transform duration-300 ease-out">I</span><span class="inline-block transition-transform duration-300 ease-out">S</span><span class="inline-block transition-transform duration-300 ease-out">T</span><span class="inline-block transition-transform duration-300 ease-out">O</span><span class="inline-block transition-transform duration-300 ease-out">S</span>
              </h2>
           </div>
 
@@ -165,6 +165,50 @@ import MemberCard from '../components/MemberCard.astro';
   </div>
 
   <script>
+
+    // --- Magnetic Typography Effect ---
+    const magneticText = document.getElementById('magnetic-text');
+    if (magneticText) {
+      const letters = magneticText.querySelectorAll('span');
+      const maxDistance = 300; // How close mouse needs to be to pull letter
+      const pullStrength = 0.15; // How much it pulls (lower = less movement)
+
+      document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        letters.forEach((letter) => {
+          const rect = letter.getBoundingClientRect();
+          // Center of the letter
+          const letterX = rect.left + rect.width / 2;
+          const letterY = rect.top + rect.height / 2;
+
+          const distanceX = mouseX - letterX;
+          const distanceY = mouseY - letterY;
+          const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+          if (distance < maxDistance) {
+            // Calculate pull: closer = stronger pull
+            const force = (maxDistance - distance) / maxDistance;
+            const moveX = distanceX * force * pullStrength;
+            const moveY = distanceY * force * pullStrength;
+
+            letter.style.transform = `translate(${moveX}px, ${moveY}px)`;
+          } else {
+            // Reset position if mouse is far
+            letter.style.transform = `translate(0px, 0px)`;
+          }
+        });
+      });
+
+      // Reset when mouse leaves window
+      document.addEventListener('mouseleave', () => {
+        letters.forEach((letter) => {
+          letter.style.transform = `translate(0px, 0px)`;
+        });
+      });
+    }
+
     // --- Page Load Animation ---
     document.addEventListener("DOMContentLoaded", () => {
       const pageContent = document.getElementById('page-content');
@@ -192,7 +236,7 @@ import MemberCard from '../components/MemberCard.astro';
 
       // 2. Transition Box Expansion (Github-like curve)
       const expandStart = windowHeight * 0.5;
-      const expandEnd = windowHeight * 1.5;
+      const expandEnd = windowHeight * 1.5; // Perfectly aligns with the 200vh container (100vh static + 100vh scroll)
       const expandPhase = Math.min(Math.max((scrollY - expandStart) / (expandEnd - expandStart), 0), 1);
 
       const transitionBg = document.getElementById('transition-bg');
