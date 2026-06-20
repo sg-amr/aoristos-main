@@ -41,8 +41,13 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
       <slot />
     </main>
 
-    <footer class="py-12 text-center text-sm text-gray-500 border-t border-gray-100 mt-24">
-      <p>&copy; {new Date().getFullYear()} Aoristos. All rights reserved.</p>
+    <footer class="py-12 border-t border-gray-100 mt-24">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col items-center gap-6">
+        <a href="https://x.com/team_aoristos" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-900 transition-colors" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 fill-current"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+        </a>
+        <p class="text-sm text-gray-500">&copy; {new Date().getFullYear()} Aoristos. All rights reserved.</p>
+      </div>
     </footer>
   </body>
 </html>
