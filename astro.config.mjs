@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   output: 'static',
   site: 'https://sg-amr.github.io',
-  base: '/aoristos-main'
+  base: '/aoristos-main',
   vite: {
     plugins: [tailwindcss()]
   }
