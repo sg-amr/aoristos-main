@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   name: string;
   role: string;
   specialties: string[];
-  icon: string;
+  icon: any;
 }
 
 const { name, role, specialties, icon } = Astro.props;
@@ -11,7 +13,7 @@ const { name, role, specialties, icon } = Astro.props;
 
 <div class="flex flex-col items-center p-8 bg-white border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
   <div class="w-32 h-32 mb-6 bg-gray-50 rounded-full flex items-center justify-center p-6 border-2 border-transparent hover:border-[var(--color-aoristos-green)] transition-colors overflow-hidden">
-    <img src={icon} alt={`${name} abstract symbol`} class="w-full h-full object-contain opacity-80" />
+    <Image src={icon} alt={`${name} abstract symbol`} class="w-full h-full object-contain opacity-80" />
   </div>
 
   <h3 class="text-xl font-bold text-gray-900 mb-1">{name}</h3>
