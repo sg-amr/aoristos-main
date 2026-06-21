@@ -240,3 +240,53 @@
 
   </svg>
 </div>
+
+<style>
+  .phase-school { animation: show-school 12s infinite; }
+  .phase-trans1 { animation: show-trans1 12s infinite; }
+  .phase-trans-teacher-leave { animation: show-teacher-leave 12s infinite; }
+  .phase-wb { animation: show-wb 12s infinite; }
+  .phase-trans2 { animation: show-trans2 12s infinite; }
+  .phase-home { animation: show-home 12s infinite; }
+  .phase-trans-teacher-enter { animation: show-teacher-enter 12s infinite; }
+  .phase-trans3 { animation: show-trans3 12s infinite; }
+
+  @keyframes show-school {
+    0%, 20.83% { opacity: 1; }
+    20.84%, 100% { opacity: 0; }
+  }
+  @keyframes show-trans1 {
+    0%, 20.83% { opacity: 0; }
+    20.84%, 29.16% { opacity: 1; }
+    29.17%, 100% { opacity: 0; }
+  }
+  @keyframes show-teacher-leave {
+    0%, 20.83% { opacity: 0; }
+    20.84%, 29.16% { opacity: 1; }
+    29.17%, 100% { opacity: 0; }
+  }
+  @keyframes show-wb {
+    0%, 29.16% { opacity: 0; }
+    29.17%, 62.50% { opacity: 1; }
+    62.51%, 100% { opacity: 0; }
+  }
+  @keyframes show-trans2 {
+    0%, 62.50% { opacity: 0; }
+    62.51%, 70.83% { opacity: 1; }
+    70.84%, 100% { opacity: 0; }
+  }
+  @keyframes show-home {
+    0%, 70.83% { opacity: 0; }
+    70.84%, 95.83% { opacity: 1; }
+    95.84%, 100% { opacity: 0; }
+  }
+  @keyframes show-teacher-enter {
+    0%, 91.66% { opacity: 0; }
+    91.67%, 95.83% { opacity: 1; }
+    95.84%, 100% { opacity: 0; }
+  }
+  @keyframes show-trans3 {
+    0%, 95.83% { opacity: 0; }
+    95.84%, 100% { opacity: 1; }
+  }
+</style>
