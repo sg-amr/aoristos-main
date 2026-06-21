@@ -1,6 +1,19 @@
 ---
+import '@fontsource/inter/300.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/noto-sans-jp/300.css';
+import '@fontsource/noto-sans-jp/400.css';
+import '@fontsource/noto-sans-jp/500.css';
+import '@fontsource/noto-sans-jp/700.css';
+import '@fontsource/noto-serif-jp/400.css';
+import '@fontsource/noto-serif-jp/700.css';
+
 import '../styles/global.css';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { Image } from 'astro:assets';
+import aoristosIcon from '../assets/icons/aoristos-icon.svg';
 
 interface Props {
   title?: string;
@@ -17,10 +30,6 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <!-- Google Fonts for typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body class="bg-aoristos-light text-aoristos-dark antialiased selection:bg-aoristos-green selection:text-white">
 
@@ -35,7 +44,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
     <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
       <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 text-xl font-bold tracking-widest text-aoristos-dark hover:text-aoristos-green transition-colors">
-          <img src="/icons/aoristos-icon.svg" alt="Aoristos Icon" class="w-12 h-12 object-cover" />
+          <Image src={aoristosIcon} alt="Aoristos Icon" class="w-12 h-12 object-cover" loading="eager" />
           Aoristos
         </a>
         <nav class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
@@ -72,7 +81,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
       <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
         <div class="flex flex-col gap-6 w-full md:w-auto">
           <a href="/" class="flex items-center gap-2 text-xl font-bold tracking-widest text-aoristos-dark hover:text-aoristos-green transition-colors">
-            <img src="/icons/aoristos-icon.svg" alt="Aoristos Icon" class="w-10 h-10 object-cover grayscale" />
+            <Image src={aoristosIcon} alt="Aoristos Icon" class="w-10 h-10 object-cover grayscale" />
             Aoristos
           </a>
           <p class="text-sm text-gray-500 max-w-sm">

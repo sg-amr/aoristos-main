@@ -1,4 +1,6 @@
 // Placeholders and global strings
+import placeholderIcon from './assets/icons/aoristos-icon.svg';
+import sonnekoIcon from './assets/icons/member-sonneko.png';
 
 export const SITE_TITLE = 'Aoristos | 大阪星光学院 自学団体';
 export const SITE_DESCRIPTION = '未定義な知が共鳴する。学校教育に定義されない、自発的な学習と研究を行う集団。';
@@ -8,31 +10,31 @@ export const MEMBERS = [
     name: 'おにぎり',
     role: 'チームリーダー',
     specialties: ['物理', '哲学', '情報', '地学'],
-    icon: '/icons/placeholder-symbol.svg', // TASK: Replace with actual abstract symbol path
+    icon: placeholderIcon, // TASK: Replace with actual abstract symbol path
   },
   {
     name: 'Ninastan',
     role: 'サブリーダー',
     specialties: ['言語学'],
-    icon: '/icons/placeholder-symbol.svg', // TASK: Replace with actual abstract symbol path
+    icon: placeholderIcon, // TASK: Replace with actual abstract symbol path
   },
   {
     name: 'sonneko',
     role: '対外リーダー',
     specialties: ['情報', '科学全般', '哲学', '数学'],
-    icon: '/icons/member-sonneko.png',
+    icon: sonnekoIcon,
   },
   {
     name: 'ゴムけし',
     role: '',
     specialties: ['地学', '天文'],
-    icon: '/icons/placeholder-symbol.svg', // TASK: Replace with actual abstract symbol path
+    icon: placeholderIcon, // TASK: Replace with actual abstract symbol path
   },
   {
     name: 'autumn',
     role: '',
     specialties: ['言語学', '英語', 'ディベート'],
-    icon: '/icons/placeholder-symbol.svg', // TASK: Replace with actual abstract symbol path
+    icon: placeholderIcon, // TASK: Replace with actual abstract symbol path
   }
 ];
 
