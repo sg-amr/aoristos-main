@@ -39,9 +39,27 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
           Aoristos
         </a>
         <nav class="hidden md:flex gap-8 text-sm font-medium tracking-wide">
+          <a href="/blog" class="hover:text-aoristos-green transition-colors">Blog</a>
           <a href="/#philosophy" class="hover:text-aoristos-green transition-colors">Philosophy</a>
           <a href="/#achievements" class="hover:text-aoristos-green transition-colors">Achievements</a>
           <a href="/#members" class="hover:text-aoristos-green transition-colors">Members</a>
+        </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-50">
+          <span class="w-6 h-0.5 bg-aoristos-dark transition-transform duration-300 origin-center"></span>
+          <span class="w-6 h-0.5 bg-aoristos-dark transition-opacity duration-300"></span>
+          <span class="w-6 h-0.5 bg-aoristos-dark transition-transform duration-300 origin-center"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobile-menu" class="fixed top-16 left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-[150%] opacity-0 transition-all duration-300 ease-in-out md:hidden z-40">
+        <nav class="flex flex-col px-6 py-4 space-y-4 text-center text-lg font-medium tracking-wide">
+          <a href="/blog" class="mobile-link text-aoristos-dark hover:text-aoristos-green transition-colors">Blog</a>
+          <a href="/#philosophy" class="mobile-link text-aoristos-dark hover:text-aoristos-green transition-colors">Philosophy</a>
+          <a href="/#achievements" class="mobile-link text-aoristos-dark hover:text-aoristos-green transition-colors">Achievements</a>
+          <a href="/#members" class="mobile-link text-aoristos-dark hover:text-aoristos-green transition-colors">Members</a>
         </nav>
       </div>
     </header>
@@ -50,12 +68,41 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
       <slot />
     </main>
 
-    <footer class="py-12 border-t border-gray-300 mt-24">
-      <div class="max-w-6xl mx-auto px-6 flex flex-col items-center gap-6">
-        <a href="https://x.com/team_aoristos" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-900 transition-colors" aria-label="X (Twitter)">
-          <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 fill-current"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-        </a>
-        <p class="text-sm text-gray-500">&copy; {new Date().getFullYear()} Aoristos. All rights reserved.</p>
+    <footer class="py-16 border-t border-gray-300 mt-24">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+        <div class="flex flex-col gap-6 w-full md:w-auto">
+          <a href="/" class="flex items-center gap-2 text-xl font-bold tracking-widest text-aoristos-dark hover:text-aoristos-green transition-colors">
+            <img src="/icons/aoristos-icon.svg" alt="Aoristos Icon" class="w-10 h-10 object-cover grayscale" />
+            Aoristos
+          </a>
+          <p class="text-sm text-gray-500 max-w-sm">
+            未定義な知が共鳴する。<br />
+            学校教育に定義されない、自発的な学習と研究を行う集団。
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="https://x.com/team_aoristos" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-900 transition-colors" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 fill-current"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 w-full md:w-auto text-sm">
+          <div class="flex flex-col gap-3">
+            <h4 class="font-bold text-gray-900 tracking-wider">PAGES</h4>
+            <a href="/" class="text-gray-500 hover:text-aoristos-green transition-colors">Home</a>
+            <a href="/blog" class="text-gray-500 hover:text-aoristos-green transition-colors">Blog</a>
+            <a href="/activities" class="text-gray-500 hover:text-aoristos-green transition-colors">Activities</a>
+          </div>
+          <div class="flex flex-col gap-3">
+            <h4 class="font-bold text-gray-900 tracking-wider">SECTIONS</h4>
+            <a href="/#philosophy" class="text-gray-500 hover:text-aoristos-green transition-colors">Philosophy</a>
+            <a href="/#achievements" class="text-gray-500 hover:text-aoristos-green transition-colors">Achievements</a>
+            <a href="/#members" class="text-gray-500 hover:text-aoristos-green transition-colors">Members</a>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-6xl mx-auto px-6 mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-gray-400">&copy; {new Date().getFullYear()} Aoristos. All rights reserved.</p>
       </div>
     </footer>
 
@@ -68,6 +115,50 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
             loader.style.display = 'none';
           }, 500); // Wait for transition to finish
         }
+      });
+
+      // Mobile Menu Toggle Logic
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      let isMenuOpen = false;
+
+      function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+          // Open menu
+          mobileMenu?.classList.remove('-translate-y-[150%]', 'opacity-0');
+          mobileMenu?.classList.add('translate-y-0', 'opacity-100');
+
+          // Animate hamburger icon to X
+          if (mobileBtn) {
+            const spans = mobileBtn.querySelectorAll('span');
+            spans[0]?.classList.add('translate-y-2', 'rotate-45');
+            spans[1]?.classList.add('opacity-0');
+            spans[2]?.classList.add('-translate-y-2', '-rotate-45');
+          }
+        } else {
+          // Close menu
+          mobileMenu?.classList.add('-translate-y-[150%]', 'opacity-0');
+          mobileMenu?.classList.remove('translate-y-0', 'opacity-100');
+
+          // Revert hamburger icon
+          if (mobileBtn) {
+            const spans = mobileBtn.querySelectorAll('span');
+            spans[0]?.classList.remove('translate-y-2', 'rotate-45');
+            spans[1]?.classList.remove('opacity-0');
+            spans[2]?.classList.remove('-translate-y-2', '-rotate-45');
+          }
+        }
+      }
+
+      mobileBtn?.addEventListener('click', toggleMenu);
+
+      // Close menu when clicking a link
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (isMenuOpen) toggleMenu();
+        });
       });
     </script>
 
