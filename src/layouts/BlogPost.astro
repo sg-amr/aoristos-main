@@ -1,0 +1,23 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={`${frontmatter.title} | Aoristos Blog`} description={frontmatter.description}>
+  <div class="py-32 px-6 bg-white min-h-screen">
+    <article class="max-w-3xl mx-auto">
+      <div class="mb-8 border-b border-gray-200 pb-8">
+        <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">{frontmatter.title}</h1>
+        {frontmatter.pubDate && (
+          <time class="text-sm text-gray-500 font-medium" datetime={frontmatter.pubDate}>
+            {frontmatter.pubDate}
+          </time>
+        )}
+      </div>
+      <div class="prose prose-lg prose-gray max-w-none text-gray-700 leading-relaxed">
+        <slot />
+      </div>
+    </article>
+  </div>
+</BaseLayout>

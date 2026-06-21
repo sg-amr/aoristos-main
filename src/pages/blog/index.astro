@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Use import.meta.glob to fetch all markdown files in this directory in Astro 4+
+const postsFiles = import.meta.glob('./*.md', { eager: true });
+const allPosts = Object.values(postsFiles);
+
+// Sort by date (descending)
+const sortedPosts = allPosts.sort((a: any, b: any) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+---
+
+<BaseLayout title="Blog | Aoristos" description="Aoristosのブログ。メンバーたちの未定義な知の探求を記録します。">
+  <div class="py-32 px-6 bg-white min-h-screen">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Blog</h1>
+        <p class="text-lg text-gray-500 font-light">
+          未定義な知の探求の記録。
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {sortedPosts.map(post => (
+          <article class="group">
+            <a href={post.url} class="block p-6 border border-gray-100 hover:border-[var(--color-aoristos-green)]/50 rounded-xl transition-all hover:bg-gray-50/50 hover:shadow-sm">
+              <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-3">
+                <h2 class="text-2xl font-bold text-gray-900 group-hover:text-[var(--color-aoristos-green)] transition-colors">
+                  {post.frontmatter.title}
+                </h2>
+                {post.frontmatter.pubDate && (
+                  <time class="text-sm text-gray-400 shrink-0" datetime={post.frontmatter.pubDate}>
+                    {post.frontmatter.pubDate}
+                  </time>
+                )}
+              </div>
+              <p class="text-gray-600 leading-relaxed">
+                {post.frontmatter.description}
+              </p>
+              <div class="mt-4 inline-flex items-center text-sm font-medium text-[var(--color-aoristos-green)]">
+                Read more
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </a>
+          </article>
+        ))}
+        {sortedPosts.length === 0 && (
+          <p class="text-gray-500 text-center py-12">記事がありません。</p>
+        )}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
